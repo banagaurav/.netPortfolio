@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Portfolio.Controllers
 {
-    public class AcademicController : Controller
+    public class BlogsController : Controller
     {
         // GET: AcademicController
         public ActionResult Index()
@@ -10,5 +10,9 @@ namespace Portfolio.Controllers
             return View();
         }
 
+        public ActionResult BlogDetails()
+        {
+            return View();
+        }
     }
 }
