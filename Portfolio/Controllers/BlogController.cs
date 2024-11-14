@@ -12,13 +12,13 @@ namespace Portfolio.Controllers
             _db = db;
         }
 
-        public ActionResult Index()
+        public IActionResult Index()
         {
             List<Blog> objBlogList = _db.Blogs.ToList();
             return View(objBlogList);
         }
 
-        public ActionResult BlogDetails()
+        public IActionResult BlogDetails()
         {
             return View();
         }
