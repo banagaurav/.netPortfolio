@@ -1,0 +1,13 @@
+﻿@model List<Blog>
+@foreach (var obj in Model)
+{
+    <li>
+        <a asp-controller="Blog" asp-action="BlogDetails">
+            <div>
+                <p>@obj.BlogId</p>
+                <p>@obj.Title</p>
+            </div>
+        </a>
+    </li>
+}
+@* <img src="\images\IMG_0066.JPG" alt=""> *@

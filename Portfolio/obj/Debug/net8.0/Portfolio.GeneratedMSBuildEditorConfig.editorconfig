@@ -18,12 +18,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Code\C#\Port\Portfolio
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Code/C\#/Port/Portfolio/Views/Blogs/BlogDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ3NcQmxvZ0RldGFpbHMuY3NodG1s
+[D:/Code/C\#/Port/Portfolio/Views/Blog/BlogDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xCbG9nRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Code/C\#/Port/Portfolio/Views/Blogs/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ3NcSW5kZXguY3NodG1s
+[D:/Code/C\#/Port/Portfolio/Views/Blog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Code/C\#/Port/Portfolio/Views/Home/Index.cshtml]
