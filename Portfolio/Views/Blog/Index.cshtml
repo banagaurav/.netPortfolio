@@ -1,5 +1,5 @@
 ﻿@model List<Blog>
-@foreach (var obj in Model)
+@foreach (var obj in Model.OrderBy(u => u.BlogId))
 {
     <li>
         <a asp-controller="Blog" asp-action="BlogDetails">
