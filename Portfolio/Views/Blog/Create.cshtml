@@ -1,1 +1,33 @@
-﻿<h1>Create blog</h1>
+﻿@model Blog
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Add Blog</h2>
+            <hr />
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="form-control" />
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="Image"></label>
+            <input asp-for="Image" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="textarea"></label>
+            <input asp-for="textarea" class="form-control" />
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <button type="submit" class="btn btn-primary form-control">Post</button>
+
+            </div>
+            <div class="col-6">
+                <a asp-controller="Blog" asp-action="Index" class="btn btn-outline-secondary form-control">Back to
+                    List</a>
+            </div>
+        </div>
+    </div>
+</form>
