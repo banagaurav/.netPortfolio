@@ -16,9 +16,9 @@ public class AppDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Blog>().HasData(
-            new Blog { BlogId = 1, Title = "Action", Image = "img1", textarea = "textarea" },
-            new Blog { BlogId = 2, Title = "Scifie", Image = "img2", textarea = "textarea" },
-            new Blog { BlogId = 3, Title = "History", Image = "img3", textarea = "textarea" }
+            new Blog { BlogId = 1, Title = "Action", Image = "img1", BlogDescription = "textarea", DisplayOrder = 1 },
+            new Blog { BlogId = 2, Title = "Scifie", Image = "img2", BlogDescription = "textarea", DisplayOrder = 2 },
+            new Blog { BlogId = 3, Title = "History", Image = "img3", BlogDescription = "textarea", DisplayOrder = 3 }
         );
     }
 }

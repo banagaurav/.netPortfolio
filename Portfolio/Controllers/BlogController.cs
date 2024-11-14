@@ -33,8 +33,11 @@ namespace Portfolio.Controllers
         [HttpPost]
         public IActionResult Create(Blog obj)
         {
-            _db.Blogs.Add(obj);
-            _db.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _db.Blogs.Add(obj);
+                _db.SaveChanges();
+            }
             return RedirectToAction("Index"); // for different controller ("action","Controller")
         }
     }
