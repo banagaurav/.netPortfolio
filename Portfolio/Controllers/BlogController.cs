@@ -73,5 +73,32 @@ namespace Portfolio.Controllers
             }
             return RedirectToAction("EditBlog"); // for different controller ("action","Controller")
         }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Blog blogFromDb = _db.Blogs.Find(id);
+            if (blogFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(blogFromDb);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeletePOST(int? id)
+        {
+            Blog? obj = _db.Blogs.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            _db.Blogs.Remove(obj);
+            _db.SaveChanges();
+            return RedirectToAction("EditBlog"); // for different controller ("action","Controller")
+        }
     }
 }

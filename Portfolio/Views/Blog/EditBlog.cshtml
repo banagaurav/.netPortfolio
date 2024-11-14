@@ -28,7 +28,8 @@
             <br />
 
             <div class="col-6">
-                <a asp-controller="Blog" asp-action="Delete" class="btn btn-Delete form-control">Delete</a>
+                <a asp-controller="Blog" asp-action="Delete" asp-route-id="@obj.BlogId"
+                    class="btn btn-Delete form-control">Delete</a>
             </div>
             <br />
         </a>
