@@ -23,6 +23,13 @@ namespace Portfolio.Controllers
             return View();
         }
 
+        //Edit BlogPage
+        public IActionResult EditBlog()
+        {
+            List<Blog> objBlogList = _db.Blogs.ToList();
+            return View(objBlogList);
+        }
+
         // Add/Create/Post blog
 
         public IActionResult Create()
@@ -38,7 +45,33 @@ namespace Portfolio.Controllers
                 _db.Blogs.Add(obj);
                 _db.SaveChanges();
             }
-            return RedirectToAction("Index"); // for different controller ("action","Controller")
+            return RedirectToAction("EditBlog"); // for different controller ("action","Controller")
+        }
+
+
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Blog blogFromDb = _db.Blogs.Find(id);
+            if (blogFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(blogFromDb);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Blog obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Blogs.Update(obj);
+                _db.SaveChanges();
+            }
+            return RedirectToAction("EditBlog"); // for different controller ("action","Controller")
         }
     }
 }
