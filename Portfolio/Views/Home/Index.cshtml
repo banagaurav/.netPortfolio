@@ -1,8 +1,30 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model Tuple<List<Blog>, List<Album>>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div style="background-color: beige;">
+    <h2>Blog</h2>
+    @foreach (var obj in Model.Item1.OrderBy(u => u.DisplayOrder))
+    {
+        <li>
+            <a asp-controller="Blog" asp-action="BlogDetails">
+                <div>
+                    <p>@obj.Image</p>
+                    <p>@obj.Title</p>
+                </div>
+            </a>
+        </li>
+    }
+</div>
+<hr />
+<div style="background-color: beige;">
+    <h2>Photos</h2>
+    @foreach (var obj in Model.Item2.OrderBy(u => u.DisplayOrder))
+    {
+        <li>
+            <div>
+                <p>@obj.Image</p>
+                <p>@obj.Category</p>
+                <p>@obj.UploadTime</p>
+            </div>
+        </li>
+    }
 </div>
