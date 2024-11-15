@@ -13,5 +13,19 @@
 <br />
 
 <div class="col-6">
-    <a asp-controller="Blog" asp-action="Create" class="btn btn-primary form-control">Create</a>
+    <a asp-controller="Album" asp-action="Upload" class="btn btn-primary form-control">Upload</a>
 </div>
+<hr />
+
+@foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
+{
+    <li>
+        @* <a asp-controller="" asp-action=""> *@
+        <div>
+            <p>@obj.Image</p>
+            <p>@obj.Category</p>
+            <p>@obj.UploadTime</p>
+        </div>
+        @* </a> *@
+    </li>
+}

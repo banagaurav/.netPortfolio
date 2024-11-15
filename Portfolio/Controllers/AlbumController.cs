@@ -37,7 +37,7 @@ public class AlbumController : Controller
             _db.Photos.Add(obj);
             _db.SaveChanges();
         }
-        return RedirectToAction("Index"); // for different controller ("action","Controller")
+        return RedirectToAction("EditAlbum"); // for different controller ("action","Controller")
     }
 
 }
