@@ -15,12 +15,29 @@ public class AlbumController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        List<Album> objPhotoList = _db.Photos.ToList();
+        return View(objPhotoList);
     }
 
-    public IActionResult Album()
+    public IActionResult EditAlbum()
     {
         List<Album> objPhotoList = _db.Photos.ToList();
         return View(objPhotoList);
     }
+
+    public IActionResult Upload()
+    {
+        return View();
+    }
+    [HttpPost]
+    public IActionResult Upload(Album obj)
+    {
+        if (ModelState.IsValid)
+        {
+            _db.Photos.Add(obj);
+            _db.SaveChanges();
+        }
+        return RedirectToAction("Index"); // for different controller ("action","Controller")
+    }
+
 }
