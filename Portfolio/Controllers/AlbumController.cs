@@ -1,6 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ActionConstraints;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Portfolio.Data;
 using Portfolio.Models;
 
@@ -39,5 +37,31 @@ public class AlbumController : Controller
         }
         return RedirectToAction("EditAlbum"); // for different controller ("action","Controller")
     }
+    public IActionResult Delete(int? id)
+    {
+        if (id == null || id == 0)
+        {
+            return NotFound();
+        }
+        Album blogFromDb = _db.Photos.Find(id);
+        if (blogFromDb == null)
+        {
+            return NotFound();
+        }
+        return View(blogFromDb);
+    }
 
+    [HttpPost, ActionName("Delete")]
+    public IActionResult DeletePOST(int? id)
+    {
+        Blog? obj = _db.Blogs.Find(id);
+        if (obj == null)
+        {
+            return NotFound();
+        }
+        _db.Blogs.Remove(obj);
+        _db.SaveChanges();
+        return RedirectToAction("EditAlbum"); // for different controller ("action","Controller")
+    }
 }
+
