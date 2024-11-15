@@ -16,16 +16,17 @@
     <a asp-controller="Album" asp-action="Upload" class="btn btn-primary form-control">Upload</a>
 </div>
 <hr />
-<div class="col-6">
-    <a asp-controller="Album" asp-action="Delete" class="btn btn-primary form-control">Delete</a>
-</div>
-<hr />
+
 
 @foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
 {
     <li>
         @* <a asp-controller="" asp-action=""> *@
         <div>
+            <a asp-controller="Album" asp-action="Delete" asp-route-id="@obj.AlbumId"
+                style="width: 20px; background-color: firebrick;">X</a>
+            <a asp-controller="Album" asp-action="Edit" asp-route-id="@obj.AlbumId"
+                style="width: 50px; background-color: rgb(178, 164, 34);">Edit</a>
             <p>@obj.Image</p>
             <p>@obj.Category</p>
             <p>@obj.UploadTime</p>
