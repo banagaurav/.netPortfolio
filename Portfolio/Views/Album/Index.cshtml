@@ -1,11 +1,4 @@
-﻿@model List<Album>
-@foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
-{
-    <li>
-        <div>
-            <p>@obj.Image</p>
-            <p>@obj.Category</p>
-            <p>@obj.UploadTime</p>
-        </div>
-    </li>
-}
+﻿<a asp-controller="academic" asp-action="Index">Academics</a>
+<a asp-controller="Projects" asp-action="Index">Projects</a>
+<a asp-controller="Photos" asp-action="Index">Photos</a>
+<a asp-controller="Band" asp-action="Index">Band</a>

@@ -1,11 +1,9 @@
-﻿@model Album
+﻿@model Photo
 
 <form method="post">
-    <input asp-for="AlbumId" hidden />
-
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 class="text-primary">Edit Photo</h2>
+            <h2 class="text-primary">Upload Photo</h2>
             <hr />
         </div>
         <div class="mb-3 row">
@@ -36,11 +34,11 @@
 
         <div class="row">
             <div class="col-6">
-                <button type="submit" class="btn btn-primary form-control">Update</button>
+                <button type="submit" class="btn btn-primary form-control">Post</button>
 
             </div>
             <div class="col-6">
-                <a asp-controller="Album" asp-action="EditAlbum" class="btn btn-outline-secondary form-control">Back
+                <a asp-controller="Album" asp-action="EditPhoto" class="btn btn-outline-secondary form-control">Back
                     to
                     Album</a>
             </div>

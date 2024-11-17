@@ -1,9 +1,9 @@
-﻿@model List<Album>
+﻿@model List<Photo>
 
 <h2>Edit Album</h2>
 <div class="col-1">
-    <a asp-controller="Blog" asp-action="Index" class="btn btn-outline-secondary form-control">Back to
-        Album</a>
+    <a asp-controller="Photo" asp-action="Index" class="btn btn-outline-secondary form-control">Back to
+        Photo</a>
 </div>
 <br />
 <div class="col-1">
@@ -13,7 +13,7 @@
 <br />
 
 <div class="col-6">
-    <a asp-controller="Album" asp-action="Upload" class="btn btn-primary form-control">Upload</a>
+    <a asp-controller="Photo" asp-action="Upload" class="btn btn-primary form-control">Upload</a>
 </div>
 <hr />
 
@@ -23,9 +23,9 @@
     <li>
         @* <a asp-controller="" asp-action=""> *@
         <div>
-            <a asp-controller="Album" asp-action="Delete" asp-route-id="@obj.AlbumId"
+            <a asp-controller="Photo" asp-action="Delete" asp-route-id="@obj.PhotoId"
                 style="width: 20px; background-color: firebrick;">X</a>
-            <a asp-controller="Album" asp-action="Edit" asp-route-id="@obj.AlbumId"
+            <a asp-controller="Photo" asp-action="Edit" asp-route-id="@obj.PhotoId"
                 style="width: 50px; background-color: rgb(178, 164, 34);">Edit</a>
             <p>@obj.Image</p>
             <p>@obj.Category</p>

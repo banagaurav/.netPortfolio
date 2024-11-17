@@ -12,7 +12,7 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<Blog> Blogs { get; set; }
-    public DbSet<Album> Photos { get; set; }
+    public DbSet<Photo> Photos { get; set; }
 
     // protected override void OnModelCreating(ModelBuilder modelBuilder)
     // {

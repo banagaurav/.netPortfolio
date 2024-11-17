@@ -19,8 +19,8 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         List<Blog> objBlogList = _db.Blogs.ToList();
-        List<Album> objPhotoList = _db.Photos.ToList();
-        return View(new Tuple<List<Blog>, List<Album>>(objBlogList, objPhotoList));
+        List<Photo> objPhotoList = _db.Photos.ToList();
+        return View(new Tuple<List<Blog>, List<Photo>>(objBlogList, objPhotoList));
     }
 
 

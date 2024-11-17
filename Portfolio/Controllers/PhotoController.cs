@@ -3,23 +3,23 @@ using Portfolio.Data;
 using Portfolio.Models;
 
 namespace Portfolio.Controllers;
-public class AlbumController : Controller
+public class PhotoController : Controller
 {
     private readonly AppDbContext _db;
-    public AlbumController(AppDbContext db)
+    public PhotoController(AppDbContext db)
     {
         _db = db;
     }
 
     public IActionResult Index()
     {
-        List<Album> objPhotoList = _db.Photos.ToList();
+        List<Photo> objPhotoList = _db.Photos.ToList();
         return View(objPhotoList);
     }
 
-    public IActionResult EditAlbum()
+    public IActionResult EditPhoto()
     {
-        List<Album> objPhotoList = _db.Photos.ToList();
+        List<Photo> objPhotoList = _db.Photos.ToList();
         return View(objPhotoList);
     }
 
@@ -28,14 +28,14 @@ public class AlbumController : Controller
         return View();
     }
     [HttpPost]
-    public IActionResult Upload(Album obj)
+    public IActionResult Upload(Photo obj)
     {
         if (ModelState.IsValid)
         {
             _db.Photos.Add(obj);
             _db.SaveChanges();
         }
-        return RedirectToAction("EditAlbum"); // for different controller ("action","Controller")
+        return RedirectToAction("EditPhoto"); // for different controller ("action","Controller")
     }
 
     public IActionResult Edit(int? id)
@@ -44,7 +44,7 @@ public class AlbumController : Controller
         {
             return NotFound();
         }
-        Album photoFromDb = _db.Photos.Find(id);
+        Photo photoFromDb = _db.Photos.Find(id);
         if (photoFromDb == null)
         {
             return NotFound();
@@ -53,14 +53,14 @@ public class AlbumController : Controller
     }
 
     [HttpPost]
-    public IActionResult Edit(Album obj)
+    public IActionResult Edit(Photo obj)
     {
         if (ModelState.IsValid)
         {
             _db.Photos.Update(obj);
             _db.SaveChanges();
         }
-        return RedirectToAction("EditAlbum"); // for different controller ("action","Controller")
+        return RedirectToAction("EditPhoto"); // for different controller ("action","Controller")
     }
 
     public IActionResult Delete(int? id)
@@ -69,7 +69,7 @@ public class AlbumController : Controller
         {
             return NotFound();
         }
-        Album photoFromDb = _db.Photos.Find(id);
+        Photo photoFromDb = _db.Photos.Find(id);
         if (photoFromDb == null)
         {
             return NotFound();
@@ -80,14 +80,14 @@ public class AlbumController : Controller
     [HttpPost, ActionName("Delete")]
     public IActionResult DeletePOST(int? id)
     {
-        Album? obj = _db.Photos.Find(id);
+        Photo? obj = _db.Photos.Find(id);
         if (obj == null)
         {
             return NotFound();
         }
         _db.Photos.Remove(obj);
         _db.SaveChanges();
-        return RedirectToAction("EditAlbum"); // for different controller ("action","Controller")
+        return RedirectToAction("EditPhoto"); // for different controller ("action","Controller")
     }
 }
 
