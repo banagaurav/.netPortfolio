@@ -1,8 +1,9 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Portfolio.Controllers;
 
-public class BandController : Controller
+public class ProjectController : Controller
 {
     public IActionResult Index()
     {
