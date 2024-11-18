@@ -13,6 +13,9 @@ public class AppDbContext : DbContext
 
     public DbSet<Blog> Blogs { get; set; }
     public DbSet<Photo> Photos { get; set; }
+    public DbSet<Academic> Academics { get; set; }
+    public DbSet<Band> Bands { get; set; }
+    public DbSet<Project> Projects { get; set; }
 
     // protected override void OnModelCreating(ModelBuilder modelBuilder)
     // {
