@@ -1,9 +1,10 @@
-﻿@model Band
+﻿@model Academic
 
 <form method="post">
+    <input asp-for="AcademicId" hidden />
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 class="text-primary">Add Band</h2>
+            <h2 class="text-primary">Edit Academic</h2>
             <hr />
         </div>
         <div class="mb-3 row">
@@ -29,14 +30,20 @@
 
         <div class="row">
             <div class="col-6">
-                <button type="submit" class="btn btn-primary form-control">Post</button>
+                <button type="submit" class="btn btn-primary form-control">Edit</button>
 
             </div>
             <div class="col-6">
-                <a asp-controller="Band" asp-action="EditBand" class="btn btn-outline-secondary form-control">Back to
-                    Band
+                <a asp-controller="Academic" asp-action="EditAcademic"
+                    class="btn btn-outline-secondary form-control">Back to Academic
                     List</a>
             </div>
         </div>
     </div>
 </form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

@@ -22,6 +22,26 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRNZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Code/C\#/Port/Portfolio/Views/Academic/AcademicDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhZGVtaWNcQWNhZGVtaWNEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Code/C\#/Port/Portfolio/Views/Academic/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhZGVtaWNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Code/C\#/Port/Portfolio/Views/Academic/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhZGVtaWNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Code/C\#/Port/Portfolio/Views/Academic/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhZGVtaWNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Code/C\#/Port/Portfolio/Views/Academic/EditAcademc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhZGVtaWNcRWRpdEFjYWRlbWMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Code/C\#/Port/Portfolio/Views/Academic/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhZGVtaWNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

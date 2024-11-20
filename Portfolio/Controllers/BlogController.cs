@@ -18,9 +18,18 @@ namespace Portfolio.Controllers
             return View(objBlogList);
         }
 
-        public IActionResult BlogDetails()
+        public IActionResult BlogDetails(int? id)
         {
-            return View();
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Blog blogFromDb = _db.Blogs.Find(id);
+            if (blogFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(blogFromDb);
         }
 
         //Edit BlogPage

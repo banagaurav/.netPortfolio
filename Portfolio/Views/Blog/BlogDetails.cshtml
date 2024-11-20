@@ -1,11 +1,9 @@
-﻿@model List<Blog>
-<div>
-    <p>image</p>
-    <p>title</p>
-    <p>title</p>
-    <p>Category</p>
-</div>
-<hr>
-<div>
-    Text Area
-</div>
+﻿@model Blog
+
+<li>
+    <div>
+        <p>@Model.Image</p>
+        <p>@Model.Title</p>
+        <p>@Model.BlogDescription</p>
+    </div>
+</li>

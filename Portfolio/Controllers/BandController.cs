@@ -17,8 +17,21 @@ namespace Portfolio.Controllers
             List<Band> objBandList = _db.Bands.ToList();
             return View(objBandList);
         }
+        public IActionResult BandDetails(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Band bandFromDb = _db.Bands.Find(id);
+            if (bandFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(bandFromDb);
+        }
 
-        //Edit BlogPage
+        //Edit BandPage
         public IActionResult EditBand()
         {
             List<Band> objBandList = _db.Bands.ToList();

@@ -2,7 +2,7 @@
 @foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
 {
     <li>
-        <a asp-controller="Blog" asp-action="BlogDetails">
+        <a asp-controller="Blog" asp-action="BlogDetails" asp-route-id="@obj.BlogId">
             <div>
                 <p>@obj.Image</p>
                 <p>@obj.Title</p>
