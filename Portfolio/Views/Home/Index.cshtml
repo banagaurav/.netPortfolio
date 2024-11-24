@@ -1,8 +1,8 @@
-﻿@model Tuple<List<Blog>, List<Photo>>
+﻿@model HomeVM
 
 <div style="background-color: beige;">
     <h2>Blog</h2>
-    @foreach (var obj in Model.Item1.OrderBy(u => u.DisplayOrder))
+    @foreach (var obj in Model.Blogs.OrderBy(u => u.DisplayOrder))
     {
         <li>
             <a asp-controller="Blog" asp-action="BlogDetails">
@@ -17,7 +17,7 @@
 <hr />
 <div style="background-color: beige;">
     <h2>Photos</h2>
-    @foreach (var obj in Model.Item2.OrderBy(u => u.DisplayOrder))
+    @foreach (var obj in Model.Photos.OrderBy(u => u.DisplayOrder))
     {
         <li>
             <div>

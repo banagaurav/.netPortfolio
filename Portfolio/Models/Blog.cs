@@ -20,4 +20,6 @@ public class Blog
     [Required]
     [DisplayName("Display Order")]
     public int DisplayOrder { get; set; }
+
+
 }

@@ -1,7 +1,7 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Data;
 using Portfolio.Models;
+using Portfolio.ViewModel;
 
 namespace Portfolio.Controllers;
 
@@ -18,9 +18,13 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        List<Blog> objBlogList = _db.Blogs.ToList();
-        List<Photo> objPhotoList = _db.Photos.ToList();
-        return View(new Tuple<List<Blog>, List<Photo>>(objBlogList, objPhotoList));
+        var homeVM = new HomeVM
+        {
+            Blogs = _db.Blogs.ToList(),
+            Photos = _db.Photos.ToList()
+        };
+        // return View(new Tuple<List<Blog>, List<Photo>>(objBlogList, objPhotoList));
+        return View(homeVM);
     }
 
 
