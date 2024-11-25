@@ -18,6 +18,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+
         var homeVM = new HomeVM
         {
             Blogs = _db.Blogs.ToList(),
