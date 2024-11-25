@@ -20,4 +20,19 @@ public partial class BlogController : Controller
         return View(objBlogList);
     }
 
+    public IActionResult BlogDetails(int? id)
+    {
+        if (id == null || id == 0)
+        {
+            return NotFound();
+        }
+        Blog blogFromDb = _db.Blogs.Find(id);
+        if (blogFromDb == null)
+        {
+            return NotFound();
+        }
+        return View(blogFromDb);
+    }
+
+
 }

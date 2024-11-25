@@ -14,19 +14,7 @@ namespace Portfolio.Areas.Admin.Controllers
             _db = db;
         }
 
-        public IActionResult BandDetails(int? id)
-        {
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
-            Band bandFromDb = _db.Bands.Find(id);
-            if (bandFromDb == null)
-            {
-                return NotFound();
-            }
-            return View(bandFromDb);
-        }
+
 
         //Edit BandPage
         public IActionResult EditBand()

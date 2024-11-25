@@ -38,6 +38,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNhZGVtaWNcRWRpdEFjYWRlbWMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Code/C\#/Port/Portfolio/Areas/Admin/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Code/C\#/Port/Portfolio/Areas/Admin/Views/Band/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmFuZFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -52,10 +56,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Code/C\#/Port/Portfolio/Areas/Admin/Views/Band/EditBand.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmFuZFxFZGl0QmFuZC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/Areas/Admin/Views/Blog/BlogDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xCbG9nRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Code/C\#/Port/Portfolio/Areas/Admin/Views/Blog/Create.cshtml]
@@ -92,10 +92,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Code/C\#/Port/Portfolio/Areas/Client/Views/Academic/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50XFZpZXdzXEFjYWRlbWljXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/Areas/Client/Views/Admin/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50XFZpZXdzXEFkbWluXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Code/C\#/Port/Portfolio/Areas/Client/Views/Album/Index.cshtml]
@@ -136,114 +132,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Code/C\#/Port/Portfolio/Areas/Client/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50XFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/AboutMe/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxBYm91dE1lXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Academic/AcademicDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxBY2FkZW1pY1xBY2FkZW1pY0RldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Academic/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxBY2FkZW1pY1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Academic/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxBY2FkZW1pY1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Academic/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxBY2FkZW1pY1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Academic/EditAcademc.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxBY2FkZW1pY1xFZGl0QWNhZGVtYy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Academic/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxBY2FkZW1pY1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Album/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxBbGJ1bVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Band/BandDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxCYW5kXEJhbmREZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Band/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxCYW5kXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Band/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxCYW5kXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Band/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxCYW5kXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Band/EditBand.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxCYW5kXEVkaXRCYW5kLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Band/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxCYW5kXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Blog/BlogDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxCbG9nXEJsb2dEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Blog/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxCbG9nXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Blog/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxCbG9nXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Blog/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxCbG9nXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Blog/EditBlog.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxCbG9nXEVkaXRCbG9nLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Blog/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxCbG9nXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxIb21lXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Photo/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxQaG90b1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Photo/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxQaG90b1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Photo/EditPhoto.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxQaG90b1xFZGl0UGhvdG8uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Photo/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxQaG90b1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Photo/Upload.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxQaG90b1xVcGxvYWQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Code/C\#/Port/Portfolio/else/Project/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = ZWxzZVxQcm9qZWN0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Code/C\#/Port/Portfolio/Views/Shared/Error.cshtml]

@@ -7,5 +7,8 @@ namespace Portfolio.Areas.Admin.Controllers;
 
 public partial class AdminController : Controller
 {
-
+    public IActionResult Index()
+    {
+        return View();
+    }
 }
