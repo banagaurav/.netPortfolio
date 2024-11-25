@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 using Portfolio.Data;
 using Portfolio.Models;
 
-namespace Portfolio.Controllers
+namespace Portfolio.Areas.Admin.Controllers
 {
-    public class BlogController : Controller
+    [Area("Admin")]
+
+    public partial class BlogController : Controller
     {
         private readonly AppDbContext _db;
         public BlogController(AppDbContext db)
@@ -12,11 +14,6 @@ namespace Portfolio.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
-        {
-            List<Blog> objBlogList = _db.Blogs.ToList();
-            return View(objBlogList);
-        }
 
         public IActionResult BlogDetails(int? id)
         {

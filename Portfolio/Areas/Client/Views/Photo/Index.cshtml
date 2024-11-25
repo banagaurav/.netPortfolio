@@ -1,0 +1,11 @@
+﻿@model List<Photo>
+@foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
+{
+    <li>
+        <div>
+            <p>@obj.Image</p>
+            <p>@obj.Category</p>
+            <p>@obj.UploadTime</p>
+        </div>
+    </li>
+}

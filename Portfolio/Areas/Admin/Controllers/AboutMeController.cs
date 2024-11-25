@@ -1,12 +1,10 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Portfolio.Controllers;
+namespace Portfolio.Areas.Admin.Controllers;
 
-public class AboutMeController : Controller
+[Area("Admin")]
+public partial class AboutMeController : Controller
 {
-    public IActionResult Index()
-    {
-        return View();
-    }
+
 }

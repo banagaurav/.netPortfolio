@@ -1,0 +1,30 @@
+﻿@model HomeVM
+
+<div style="background-color: beige;">
+    <h2>Blog</h2>
+    @foreach (var obj in Model.Blogs.OrderBy(u => u.DisplayOrder))
+    {
+        <li>
+            <a asp-area="Client" asp-controller="Blog" asp-action="BlogDetails">
+                <div>
+                    <p>@obj.Image</p>
+                    <p>@obj.Title</p>
+                </div>
+            </a>
+        </li>
+    }
+</div>
+<hr />
+<div style="background-color: beige;">
+    <h2>Photos</h2>
+    @foreach (var obj in Model.Photos.OrderBy(u => u.DisplayOrder))
+    {
+        <li>
+            <div>
+                <p>@obj.Image</p>
+                <p>@obj.Category</p>
+                <p>@obj.UploadTime</p>
+            </div>
+        </li>
+    }
+</div>

@@ -1,9 +1,10 @@
 
 using Microsoft.AspNetCore.Mvc;
 
-namespace Portfolio.Controllers;
+namespace Portfolio.Areas.Client.Controllers;
 
-public class AdminController : Controller
+[Area("Client")]
+public partial class AdminController : Controller
 {
     public IActionResult Index()
     {

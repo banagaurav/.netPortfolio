@@ -1,0 +1,13 @@
+﻿@model List<Blog>
+@foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
+{
+    <li>
+        <a asp-area="Client" asp-controller="Blog" asp-action="BlogDetails" asp-route-id="@obj.BlogId">
+            <div>
+                <p>@obj.Image</p>
+                <p>@obj.Title</p>
+            </div>
+        </a>
+    </li>
+}
+@* <img src="\images\IMG_0066.JPG" alt=""> *@

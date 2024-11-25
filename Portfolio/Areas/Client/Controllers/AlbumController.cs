@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Portfolio.Controllers;
+namespace Portfolio.Areas.Client.Controllers;
 
-public class AlbumController : Controller
+[Area("Client")]
+
+public partial class AlbumController : Controller
 {
     public IActionResult Index()
     {

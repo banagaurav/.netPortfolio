@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Data;
-using Portfolio.Models;
 using Portfolio.ViewModel;
 
-namespace Portfolio.Controllers;
+namespace Portfolio.Areas.Client.Controllers;
 
+[Area("Client")]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;

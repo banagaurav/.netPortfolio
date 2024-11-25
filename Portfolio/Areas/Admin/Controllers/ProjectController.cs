@@ -1,12 +1,11 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Portfolio.Controllers;
+namespace Portfolio.Areas.Admin.Controllers;
 
-public class ProjectController : Controller
+[Area("Admin")]
+
+public partial class ProjectController : Controller
 {
-    public IActionResult Index()
-    {
-        return View();
-    }
+
 }

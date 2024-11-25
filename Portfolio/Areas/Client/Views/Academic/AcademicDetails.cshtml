@@ -1,0 +1,12 @@
+﻿@model List<Academic>
+@foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
+{
+    <li>
+        <a asp-controller="Band" asp-action="BandDetails">
+            <div>
+                <p>@obj.Image</p>
+                <p>@obj.Title</p>
+            </div>
+        </a>
+    </li>
+}

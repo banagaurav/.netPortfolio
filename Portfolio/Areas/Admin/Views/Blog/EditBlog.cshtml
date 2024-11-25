@@ -1,0 +1,43 @@
+﻿@model List<Blog>
+<h2>Edit Blog</h2>
+<div class="col-1">
+    <a asp-controller="Blog" asp-action="Index" class="btn btn-outline-secondary form-control">Back to
+        List</a>
+</div>
+<br />
+<div class="col-1">
+    <a asp-controller="Admin" asp-action="Index" class="btn btn-outline-secondary form-control">Back to
+        Admin</a>
+</div>
+<br />
+
+<div class="col-6">
+    <a asp-controller="Blog" asp-action="Create" class="btn btn-primary form-control">Create</a>
+</div>
+<br />
+
+
+
+
+@foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
+{
+    <li>
+        <a asp-controller="Blog" asp-action="BlogDetails" asp-route-id="@obj.BlogId">
+            <div>
+                <p>@obj.Image</p>
+                <p>@obj.Title</p>
+            </div>
+            <div class="col-6">
+                <a asp-controller="Blog" asp-action="Edit" asp-route-id="@obj.BlogId"
+                    class="btn btn-primary form-control">Edit</a>
+            </div>
+            <br />
+
+            <div class="col-6">
+                <a asp-controller="Blog" asp-action="Delete" asp-route-id="@obj.BlogId"
+                    class="btn btn-Delete form-control">Delete</a>
+            </div>
+            <br />
+        </a>
+    </li>
+}

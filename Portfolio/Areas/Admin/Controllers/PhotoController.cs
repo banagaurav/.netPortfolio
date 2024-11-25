@@ -2,8 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using Portfolio.Data;
 using Portfolio.Models;
 
-namespace Portfolio.Controllers;
-public class PhotoController : Controller
+namespace Portfolio.Areas.Admin.Controllers;
+[Area("Admin")]
+
+public partial class PhotoController : Controller
 {
     private readonly AppDbContext _db;
     public PhotoController(AppDbContext db)
@@ -11,11 +13,6 @@ public class PhotoController : Controller
         _db = db;
     }
 
-    public IActionResult Index()
-    {
-        List<Photo> objPhotoList = _db.Photos.ToList();
-        return View(objPhotoList);
-    }
 
     public IActionResult EditPhoto()
     {
