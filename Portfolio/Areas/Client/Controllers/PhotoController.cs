@@ -18,7 +18,5 @@ public partial class PhotoController : Controller
         List<Photo> objPhotoList = _db.Photos.ToList();
         return View(objPhotoList);
     }
-
-
 }
 
