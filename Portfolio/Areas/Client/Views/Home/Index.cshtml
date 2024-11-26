@@ -17,14 +17,14 @@
 <hr />
 <div style="background-color: beige;">
     <h2>Photos</h2>
-    @foreach (var obj in Model.Photos.OrderBy(u => u.DisplayOrder))
-    {
-        <li>
-            <div>
-                <p>@obj.Image</p>
-                <p>@obj.Category</p>
-                <p>@obj.UploadTime</p>
-            </div>
-        </li>
-    }
+    <tbody>
+        @foreach (var photo in Model.Photos.OrderBy(u => u.DisplayOrder))
+        {
+            <tr>
+                <td>@photo.PhotoId</td>
+                <td><img src="@photo.FilePath" alt="Photo" width="100" /></td>
+                <td>@photo.DisplayOrder</td>
+            </tr>
+        }
+    </tbody>
 </div>

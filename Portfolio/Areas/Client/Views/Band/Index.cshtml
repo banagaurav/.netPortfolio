@@ -1,12 +1,12 @@
 ﻿@model List<Band>
 @foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
 {
-    <li>
-        <a asp-area="Client" asp-controller="Band" asp-action="BandDetails">
-            <div>
-                <p>@obj.Image</p>
-                <p>@obj.Title</p>
-            </div>
-        </a>
-    </li>
+        <li>
+            <a asp-area="Client" asp-controller="Band" asp-action="BandDetails" asp-route-id="@obj.BandId">
+                <div>
+                    <p>@obj.Image</p>
+                    <p>@obj.Title</p>
+                </div>
+            </a>
+        </li>
 }

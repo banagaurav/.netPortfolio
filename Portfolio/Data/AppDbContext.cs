@@ -25,4 +25,44 @@ public class AppDbContext : DbContext
     //         new Blog { BlogId = 3, Title = "History", Image = "img3", BlogDescription = "textarea", DisplayOrder = 3 }
     //     );
     // }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        // Configure optional one-to-many relationship
+        modelBuilder.Entity<Photo>()
+            .HasOne(p => p.Blog)
+            .WithMany() // A blog can have multiple photos if needed
+            .HasForeignKey(p => p.BlogId)
+            .OnDelete(DeleteBehavior.Cascade); // Delete photos when the related blog is deleted
+
+        // Seed Blog data
+        modelBuilder.Entity<Blog>().HasData(
+            new Blog
+            {
+                BlogId = 1,
+                Title = "Introduction to .NET",
+                Image = "https://example.com/images/dotnet.jpg",
+                BlogDescription = "This blog post introduces the basics of .NET framework.",
+                DisplayOrder = 1
+            },
+            new Blog
+            {
+                BlogId = 2,
+                Title = "Understanding C#",
+                Image = "https://example.com/images/csharp.jpg",
+                BlogDescription = "A deep dive into the C# programming language and its features.",
+                DisplayOrder = 2
+            },
+            new Blog
+            {
+                BlogId = 3,
+                Title = "ASP.NET MVC for Beginners",
+                Image = "https://example.com/images/aspnetmvc.jpg",
+                BlogDescription = "This blog explains the fundamentals of ASP.NET MVC.",
+                DisplayOrder = 3
+            }
+        );
+
+        base.OnModelCreating(modelBuilder);
+    }
+
 }

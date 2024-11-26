@@ -31,15 +31,38 @@ namespace Portfolio.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(Blog obj)
         {
             if (ModelState.IsValid)
             {
+                // Add the blog record to the database
                 _db.Blogs.Add(obj);
-                _db.SaveChanges();
+                _db.SaveChanges(); // Save to generate BlogId for the new blog
+
+                // Check if the Image URL is provided
+                if (!string.IsNullOrEmpty(obj.Image))
+                {
+                    // Create a new Photo record associated with the blog
+                    var photo = new Photo
+                    {
+                        FilePath = obj.Image, // Save the image URL
+                        UploadTime = DateTime.Now,
+                        BlogId = obj.BlogId, // Associate with the newly created blog
+                        DisplayOrder = obj.DisplayOrder // Use the same display order if needed
+                    };
+
+                    // Add the photo record to the database
+                    _db.Photos.Add(photo);
+                    _db.SaveChanges();
+                }
+
+                return RedirectToAction("EditBlog", "Blog"); // Redirect to another action in the Blog controller
             }
-            return RedirectToAction("EditBlog"); // for different controller ("action","Controller")
+
+            return View(obj); // Return the same view if the model state is invalid
         }
+
 
 
         public IActionResult Edit(int? id)

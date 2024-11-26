@@ -11,8 +11,8 @@ public class Blog
     [DisplayName("Blog Title")]
     public string Title { get; set; }
 
-    [DisplayName("Sub-image")]
-    public string Image { get; set; }
+    [DisplayName("Image URL")]
+    public string Image { get; set; } // Temporary storage for the input image URL
 
     [DisplayName("Description")]
     public string BlogDescription { get; set; }
@@ -20,6 +20,4 @@ public class Blog
     [Required]
     [DisplayName("Display Order")]
     public int DisplayOrder { get; set; }
-
-
 }

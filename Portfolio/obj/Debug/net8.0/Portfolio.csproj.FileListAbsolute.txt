@@ -21,7 +21,6 @@ D:\Code\C#\Port\Portfolio\obj\Debug\net8.0\staticwebassets\msbuild.build.Portfol
 D:\Code\C#\Port\Portfolio\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Portfolio.props
 D:\Code\C#\Port\Portfolio\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Portfolio.props
 D:\Code\C#\Port\Portfolio\obj\Debug\net8.0\staticwebassets.pack.json
-D:\Code\C#\Port\Portfolio\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\Code\C#\Port\Portfolio\obj\Debug\net8.0\scopedcss\bundle\Portfolio.styles.css
 D:\Code\C#\Port\Portfolio\obj\Debug\net8.0\scopedcss\projectbundle\Portfolio.bundle.scp.css
 D:\Code\C#\Port\Portfolio\obj\Debug\net8.0\Portfolio.dll
@@ -141,3 +140,4 @@ D:\Code\C#\Port\Portfolio\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Securi
 D:\Code\C#\Port\Portfolio\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Code\C#\Port\Portfolio\obj\Debug\net8.0\Portfolio.csproj.AssemblyReference.cache
 D:\Code\C#\Port\Portfolio\obj\Debug\net8.0\Portfolio.csproj.Up2Date
+D:\Code\C#\Port\Portfolio\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
