@@ -85,10 +85,46 @@ namespace Portfolio.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Update the band record in the database
                 _db.Bands.Update(obj);
                 _db.SaveChanges();
+
+                // Check if the Image URL is provided
+                if (!string.IsNullOrEmpty(obj.Image))
+                {
+                    // Check if a photo associated with this Band already exists
+                    var existingPhoto = _db.Photos.FirstOrDefault(p => p.BandId == obj.BandId);
+
+                    if (existingPhoto != null)
+                    {
+                        // Update the existing Photo record
+                        existingPhoto.FilePath = obj.Image; // Update the image URL
+                        existingPhoto.UploadTime = DateTime.Now; // Update the upload time
+                        existingPhoto.DisplayOrder = obj.DisplayOrder; // Update display order
+                        existingPhoto.Category = "Band"; // Ensure category is "Band"
+                        _db.Photos.Update(existingPhoto);
+                    }
+                    else
+                    {
+                        // Create a new Photo record if none exists
+                        var newPhoto = new Photo
+                        {
+                            FilePath = obj.Image, // Save the new image URL
+                            UploadTime = DateTime.Now,
+                            BandId = obj.BandId, // Associate with the band
+                            DisplayOrder = obj.DisplayOrder, // Use the band's display order
+                            Category = "Band" // Set category as "Band"
+                        };
+                        _db.Photos.Add(newPhoto);
+                    }
+
+                    _db.SaveChanges(); // Save changes to the database
+                }
+
+                return RedirectToAction("EditBand"); // Redirect to the EditBand action
             }
-            return RedirectToAction("EditBand"); // for different controller ("action","Controller")
+
+            return View(obj); // Return the same view if the model state is invalid
         }
 
         public IActionResult Delete(int? id)
