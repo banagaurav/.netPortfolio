@@ -37,7 +37,7 @@ public class AppDbContext : DbContext
         // Configure optional one-to-many relationship
         modelBuilder.Entity<Photo>()
             .HasOne(p => p.Blog)
-            .WithMany(b => b.Photos) // A blog can have multiple photos if needed
+            .WithMany() // A blog can have multiple photos if needed
             .HasForeignKey(p => p.BlogId)
             .OnDelete(DeleteBehavior.Cascade); // Delete photos when the related blog is deleted
 
