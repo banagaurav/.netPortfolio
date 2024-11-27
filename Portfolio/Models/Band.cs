@@ -10,6 +10,5 @@ public class Band
     public string Image { get; set; }
     public string Description { get; set; }
     public int DisplayOrder { get; set; }
-    // Navigation property to Photos (one-to-many relationship)
-    public ICollection<Photo> Photos { get; set; }  // Add this line
+
 }

@@ -50,7 +50,8 @@ namespace Portfolio.Areas.Admin.Controllers
                         FilePath = obj.Image, // Save the image URL
                         UploadTime = DateTime.Now,
                         BandId = obj.BandId, // Associate with the newly created band
-                        DisplayOrder = obj.DisplayOrder // Use the same display order if needed
+                        DisplayOrder = obj.DisplayOrder, // Use the same display order if needed
+                        Category = "Band" // Set category as "Band"
                     };
 
                     // Add the photo record to the database

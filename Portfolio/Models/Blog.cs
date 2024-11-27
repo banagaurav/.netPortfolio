@@ -21,6 +21,5 @@ public class Blog
     [DisplayName("Display Order")]
     public int DisplayOrder { get; set; }
 
-    // Navigation property to Photos (one-to-many relationship)
-    public ICollection<Photo> Photos { get; set; }  // Add this line
+
 }

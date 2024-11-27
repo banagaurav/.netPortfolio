@@ -30,7 +30,7 @@ public class AppDbContext : DbContext
         // Configurations for Band-Photo relationship (if necessary)
         modelBuilder.Entity<Photo>()
             .HasOne(p => p.Band)
-            .WithMany(b => b.Photos)
+            .WithMany()
             .HasForeignKey(p => p.BandId)
             .OnDelete(DeleteBehavior.SetNull); // Optional delete behavior
 

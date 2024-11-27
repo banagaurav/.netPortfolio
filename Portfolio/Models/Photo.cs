@@ -13,6 +13,7 @@ public class Photo
     public int DisplayOrder { get; set; }
 
     public string FilePath { get; set; } // URL or file path of the photo
+    public string Category { get; set; }
 
     // Foreign Key to Blog
     public int? BlogId { get; set; }

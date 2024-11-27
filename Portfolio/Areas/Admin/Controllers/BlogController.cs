@@ -49,7 +49,8 @@ namespace Portfolio.Areas.Admin.Controllers
                         FilePath = obj.Image, // Save the image URL
                         UploadTime = DateTime.Now,
                         BlogId = obj.BlogId, // Associate with the newly created blog
-                        DisplayOrder = obj.DisplayOrder // Use the same display order if needed
+                        DisplayOrder = obj.DisplayOrder, // Use the same display order if needed
+                        Category = "Blog" // Set category as "Blog"
                     };
 
                     // Add the photo record to the database
