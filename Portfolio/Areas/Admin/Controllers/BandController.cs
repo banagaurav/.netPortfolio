@@ -27,18 +27,41 @@ namespace Portfolio.Areas.Admin.Controllers
 
         public IActionResult Create()
         {
+
             return View();
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(Band obj)
         {
             if (ModelState.IsValid)
             {
+                // Add the band record to the database
                 _db.Bands.Add(obj);
-                _db.SaveChanges();
+                _db.SaveChanges(); // Save to generate BandId for the new band
+
+                // Check if the Image URL is provided
+                if (!string.IsNullOrEmpty(obj.Image))
+                {
+                    // Create a new Photo record associated with the band
+                    var photo = new Photo
+                    {
+                        FilePath = obj.Image, // Save the image URL
+                        UploadTime = DateTime.Now,
+                        BandId = obj.BandId, // Associate with the newly created band
+                        DisplayOrder = obj.DisplayOrder // Use the same display order if needed
+                    };
+
+                    // Add the photo record to the database
+                    _db.Photos.Add(photo);
+                    _db.SaveChanges();
+                }
+
+                return RedirectToAction("EditBand", "Band"); // Redirect to another action in the Band controller
             }
-            return RedirectToAction("EditBand"); // for different controller ("action","Controller")
+
+            return View(obj); // Return the same view if the model state is invalid
         }
 
 

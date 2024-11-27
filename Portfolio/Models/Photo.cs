@@ -19,4 +19,10 @@ public class Photo
 
     [ForeignKey("BlogId")]
     public Blog Blog { get; set; } // Navigation property
+
+    // Foreign Key to Band
+    public int? BandId { get; set; }
+
+    [ForeignKey("BandId")]
+    public Band Band { get; set; } // Navigation property
 }
