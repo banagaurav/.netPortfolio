@@ -5,7 +5,7 @@ namespace Portfolio.Areas.Admin.Controllers;
 
 [Area("Admin")]
 
-public partial class AdminController : Controller
+public class DashboardController : Controller
 {
     public IActionResult Index()
     {
