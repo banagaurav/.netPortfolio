@@ -1,5 +1,5 @@
 ﻿@model HomeVM
-
+<a asp-controller="Login" asp-action="Index"></a>
 <div style="background-color: beige;">
     <h2>Blog</h2>
     @foreach (var obj in Model.Blogs.OrderBy(u => u.DisplayOrder))
