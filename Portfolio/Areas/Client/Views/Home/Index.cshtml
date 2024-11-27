@@ -22,8 +22,25 @@
         {
             <tr>
                 <td>@photo.PhotoId</td>
-                <td><img src="@photo.FilePath" alt="Photo" width="100" /></td>
+                <td>@photo.FilePath</td>
                 <td>@photo.DisplayOrder</td>
+            </tr>
+        }
+    </tbody>
+</div>
+<hr />
+<div style="background-color: beige;">
+    <h2>Photos</h2>
+    <tbody>
+        @foreach (var obj in Model.Bands.OrderBy(u => u.DisplayOrder))
+        {
+            <tr>
+                <a asp-area="Client" asp-controller="Band" asp-action="BandDetails">
+                    <div>
+                        <p>@obj.Image</p>
+                        <p>@obj.Title</p>
+                    </div>
+                </a>
             </tr>
         }
     </tbody>

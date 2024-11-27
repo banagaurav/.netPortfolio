@@ -22,7 +22,8 @@ public class HomeController : Controller
         var homeVM = new HomeVM
         {
             Blogs = _db.Blogs.ToList(),
-            Photos = _db.Photos.ToList()
+            Photos = _db.Photos.ToList(),
+            Bands = _db.Bands.ToList()
         };
         // return View(new Tuple<List<Blog>, List<Photo>>(objBlogList, objPhotoList));
         return View(homeVM);
