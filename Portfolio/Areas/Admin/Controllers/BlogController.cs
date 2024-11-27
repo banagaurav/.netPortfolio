@@ -85,11 +85,48 @@ namespace Portfolio.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Update the blog record in the database
                 _db.Blogs.Update(obj);
                 _db.SaveChanges();
+
+                // Check if the Image URL is provided
+                if (!string.IsNullOrEmpty(obj.Image))
+                {
+                    // Check if a photo associated with this Blog already exists
+                    var existingPhoto = _db.Photos.FirstOrDefault(p => p.BlogId == obj.BlogId);
+
+                    if (existingPhoto != null)
+                    {
+                        // Update the existing Photo record
+                        existingPhoto.FilePath = obj.Image; // Update the image URL
+                        existingPhoto.UploadTime = DateTime.Now; // Update the upload time
+                        existingPhoto.DisplayOrder = obj.DisplayOrder; // Update display order
+                        existingPhoto.Category = "Blog"; // Ensure category is "Blog"
+                        _db.Photos.Update(existingPhoto);
+                    }
+                    else
+                    {
+                        // Create a new Photo record if none exists
+                        var newPhoto = new Photo
+                        {
+                            FilePath = obj.Image, // Save the new image URL
+                            UploadTime = DateTime.Now,
+                            BlogId = obj.BlogId, // Associate with the blog
+                            DisplayOrder = obj.DisplayOrder, // Use the blog's display order
+                            Category = "Blog" // Set category as "Blog"
+                        };
+                        _db.Photos.Add(newPhoto);
+                    }
+
+                    _db.SaveChanges(); // Save changes to the database
+                }
+
+                return RedirectToAction("EditBlog"); // Redirect to the EditBlog action
             }
-            return RedirectToAction("EditBlog"); // for different controller ("action","Controller")
+
+            return View(obj); // Return the same view if the model state is invalid
         }
+
 
         public IActionResult Delete(int? id)
         {
