@@ -1,15 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
-using Portfolio.Data;
 using Portfolio.Models;
+using Portfolio.Services;
 
 namespace Portfolio.Controllers
 {
     public class RegisterController : Controller
     {
-        private readonly AppDbContext _db;
-        public RegisterController(AppDbContext db)
+        private readonly IUserService _userService; // Use IUserService instead of direct DbContext
+
+        public RegisterController(IUserService userService)
         {
-            _db = db;
+            _userService = userService;
         }
 
         // Show the registration form
@@ -25,19 +26,10 @@ namespace Portfolio.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Automatically assign the "Client" role
-                var newUser = new User
-                {
-                    Username = model.Username,
-                    Password = model.Password,
-                    Role = "Client" // Role is always "Client"
-                };
+                // Call the UserService to register the new user
+                _userService.RegisterUser(model.Username, model.Password);
 
-                // Save the new user to the database
-                _db.Users.Add(newUser);
-                _db.SaveChanges();
-
-                // TODO: Save the newUser to the database or user store
+                // Display a success message and redirect to login
                 TempData["Message"] = "Registration successful as Client!";
                 return RedirectToAction("Index", "Login");
             }
