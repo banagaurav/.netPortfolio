@@ -16,7 +16,7 @@ public class AppDbContext : DbContext
     public DbSet<Academic> Academics { get; set; }
     public DbSet<Band> Bands { get; set; }
     public DbSet<Project> Projects { get; set; }
-
+    public DbSet<User> Users { get; set; }
     // protected override void OnModelCreating(ModelBuilder modelBuilder)
     // {
     //     modelBuilder.Entity<Blog>().HasData(
@@ -41,33 +41,6 @@ public class AppDbContext : DbContext
             .HasForeignKey(p => p.BlogId)
             .OnDelete(DeleteBehavior.Cascade); // Delete photos when the related blog is deleted
 
-        // Seed Blog data
-        modelBuilder.Entity<Blog>().HasData(
-            new Blog
-            {
-                BlogId = 1,
-                Title = "Introduction to .NET",
-                Image = "https://example.com/images/dotnet.jpg",
-                BlogDescription = "This blog post introduces the basics of .NET framework.",
-                DisplayOrder = 1
-            },
-            new Blog
-            {
-                BlogId = 2,
-                Title = "Understanding C#",
-                Image = "https://example.com/images/csharp.jpg",
-                BlogDescription = "A deep dive into the C# programming language and its features.",
-                DisplayOrder = 2
-            },
-            new Blog
-            {
-                BlogId = 3,
-                Title = "ASP.NET MVC for Beginners",
-                Image = "https://example.com/images/aspnetmvc.jpg",
-                BlogDescription = "This blog explains the fundamentals of ASP.NET MVC.",
-                DisplayOrder = 3
-            }
-        );
 
         base.OnModelCreating(modelBuilder);
     }

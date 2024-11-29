@@ -24,4 +24,18 @@ public class UserService : IUserService
 
         return user; // Return null if not found
     }
+
+    public void RegisterUser(string username, string password)
+    {
+        // Automatically assign the role as "Client"
+        var newUser = new User
+        {
+            Username = username,
+            Password = password,
+            Role = "Client"
+        };
+
+        _users.Add(newUser); // Add the user to the in-memory list or database
+    }
 }
+
