@@ -68,5 +68,12 @@ namespace Portfolio.Services
             _db.Users.Add(newUser);
             _db.SaveChanges(); // Commit the changes to the database
         }
+
+        public User GetCurrentUser(string username)
+        {
+            // Fetch the user by username
+            return _db.Users.FirstOrDefault(u => u.Username == username);
+        }
+
     }
 }

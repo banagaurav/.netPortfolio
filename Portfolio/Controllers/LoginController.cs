@@ -26,6 +26,8 @@ public class LoginController : Controller
 
             if (user != null)
             {
+                // Store the username in the session after successful authentication
+                HttpContext.Session.SetString("Username", user.Username);
                 // Redirect based on role
                 if (user.Role == "Admin")
                 {

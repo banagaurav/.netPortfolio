@@ -44,6 +44,26 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+            <ul class="navbar-nav ml-auto">
+                @if (HttpContextAccessor.HttpContext.Session.GetString("Username") != null)
+                {
+                    <li class="nav-item">
+                        <span class="nav-link">Welcome,
+                            @HttpContextAccessor.HttpContext.Session.GetString("Username")</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Account" asp-action="Logout">Logout</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Login" asp-action="Index">Login</a>
+                    </li>
+                }
+            </ul>
             @RenderBody()
         </main>
     </div>
