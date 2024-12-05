@@ -20,3 +20,14 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.user-info {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: right;
+}
+
+.username {
+  font-size: 14px;
+  color: #333;
+}
