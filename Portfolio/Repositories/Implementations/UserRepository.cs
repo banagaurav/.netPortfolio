@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Portfolio.Data;
 using Portfolio.Models;
 using Portfolio.Repositories.Interfaces;
-using System.Threading.Tasks;
+
 
 namespace Portfolio.Repositories.Implementations
 {
@@ -21,8 +21,6 @@ namespace Portfolio.Repositories.Implementations
             {
                 return false; // Username already exists
             }
-
-            user.CreatedAt = DateTime.UtcNow;
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
             return true;

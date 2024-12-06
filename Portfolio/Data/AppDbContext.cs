@@ -1,4 +1,4 @@
-using System;
+
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Models;
 
@@ -50,7 +50,6 @@ public class AppDbContext : DbContext
                 Username = "admin",
                 Password = "admin", // Plain text for demonstration only
                 Role = "Admin",
-                CreatedAt = DateTime.UtcNow
             }
         );
     }
