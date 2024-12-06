@@ -27,6 +27,8 @@ public class AppDbContext : DbContext
     // }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+
         // Configurations for Band-Photo relationship (if necessary)
         modelBuilder.Entity<Photo>()
             .HasOne(p => p.Band)
@@ -41,8 +43,16 @@ public class AppDbContext : DbContext
             .HasForeignKey(p => p.BlogId)
             .OnDelete(DeleteBehavior.Cascade); // Delete photos when the related blog is deleted
 
-
-        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<User>().HasData(
+            new User
+            {
+                UserId = 1,
+                Username = "admin",
+                Password = "admin", // Plain text for demonstration only
+                Role = "Admin",
+                CreatedAt = DateTime.UtcNow
+            }
+        );
     }
 
 }

@@ -1,13 +1,26 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Portfolio.Models;
-
-public class User
+namespace Portfolio.Models
 {
-    [Key]
-    public int UserId { get; set; }
-    public string Username { get; set; }
-    public string Password { get; set; }
-    public string Role { get; set; } // "Admin" or "Client"
+    public class User
+    {
+        [Key]
+        public int UserId { get; set; }
+
+        [Required]
+        [StringLength(50, MinimumLength = 3)]
+        public string Username { get; set; }
+
+        [Required]
+        [StringLength(50, MinimumLength = 6)] // Enforce minimum password length
+        public string Password { get; set; }
+
+        [Required]
+        [StringLength(20)]
+        public string Role { get; set; }
+
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime? UpdatedAt { get; set; }
+    }
 }

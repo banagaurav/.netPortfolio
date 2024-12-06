@@ -1,0 +1,22 @@
+﻿@model List<Photo>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Photo ID</th>
+            <th>Image</th>
+            <th>Display Order</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var photo in Model)
+        {
+
+                    <tr>
+                        <td>@photo.PhotoId</td>
+                        <td>@photo.FilePath</td>
+                        <td>@photo.DisplayOrder</td>
+                    </tr>
+        }
+    </tbody>
+</table>

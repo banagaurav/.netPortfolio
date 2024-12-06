@@ -13,7 +13,11 @@ public partial class PhotoController : Controller
         _db = db;
     }
 
-
+    public IActionResult EditPhoto()
+    {
+        List<Photo> objPhotoList = _db.Photos.ToList();
+        return View(objPhotoList);
+    }
 
 }
 

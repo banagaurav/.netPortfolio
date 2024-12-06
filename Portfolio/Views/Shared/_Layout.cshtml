@@ -38,19 +38,6 @@
                                 asp-action="Index">AboutMe</a>
                         </li>
                     </ul>
-
-                    <ul class="navbar-nav ml-auto">
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <p>Welcome, @User.Identity.Name!</p> <!-- Displays the logged-in user's name -->
-                        }
-                        else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-controller="Login" asp-action="Index">Login</a>
-                            </li>
-                        }
-                    </ul>
                 </div>
             </div>
         </nav>
