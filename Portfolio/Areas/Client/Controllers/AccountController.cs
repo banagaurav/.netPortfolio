@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Models;
 using Portfolio.Repositories.Interfaces;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Portfolio.Areas.Client.Controllers
 {
@@ -55,5 +56,12 @@ namespace Portfolio.Areas.Client.Controllers
             ModelState.AddModelError("", "Invalid credentials.");
             return View();
         }
+        [HttpPost]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
+        }
     }
 }
+
