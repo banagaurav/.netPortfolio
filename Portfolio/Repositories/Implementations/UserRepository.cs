@@ -8,27 +8,27 @@ namespace Portfolio.Repositories.Implementations
 {
     public class UserRepository : IUserRepository
     {
-        private readonly AppDbContext _context;
+        private readonly AppDbContext _db;
 
-        public UserRepository(AppDbContext context)
+        public UserRepository(AppDbContext db)
         {
-            _context = context;
+            _db = db;
         }
 
         public async Task<bool> RegisterUser(User user)
         {
-            if (await _context.Users.AnyAsync(u => u.Username == user.Username))
+            if (await _db.Users.AnyAsync(u => u.Username == user.Username))
             {
                 return false; // Username already exists
             }
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+            _db.Users.Add(user);
+            await _db.SaveChangesAsync();
             return true;
         }
 
         public async Task<User> LoginUser(string username, string password)
         {
-            return await _context.Users
+            return await _db.Users
                 .FirstOrDefaultAsync(u => u.Username == username && u.Password == password);
         }
     }
