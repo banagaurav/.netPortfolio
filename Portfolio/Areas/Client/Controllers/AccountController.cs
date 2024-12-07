@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Models;
-using Portfolio.Repositories.Interfaces;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using Portfolio.ViewModels;
 
 namespace Portfolio.Areas.Client.Controllers
 {
@@ -23,45 +21,31 @@ namespace Portfolio.Areas.Client.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(User user)
+        public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                user.Role = "Client";
-                var result = await _userRepository.RegisterUser(user);
-                if (result)
-                {
-                    return RedirectToAction("Login");
-                }
-                ModelState.AddModelError("", "Username already exists.");
+                return View(model);
             }
-            return View(user);
-        }
 
-        [HttpGet]
-        public IActionResult Login()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Login(string username, string password)
-        {
-            var user = await _userRepository.LoginUser(username, password);
-            if (user != null)
+            // Map RegisterViewModel to User model
+            var newUser = new User
             {
-                HttpContext.Session.SetString("Username", user.Username);
-                return RedirectToAction("Index", "Home");
+                Username = model.Username,
+                Password = model.Password, // You should hash this before storing!
+                Role = model.Role
+            };
+
+            // Save user using repository
+            var success = await _userRepository.RegisterUser(newUser);
+
+            if (success)
+            {
+                return RedirectToAction("Login", "Account", new { area = "Client" });
             }
-            ModelState.AddModelError("", "Invalid credentials.");
-            return View();
-        }
-        [HttpPost]
-        public IActionResult Logout()
-        {
-            HttpContext.Session.Clear();
-            return RedirectToAction("Login");
+
+            ModelState.AddModelError(string.Empty, "Registration failed. Please try again.");
+            return View(model);
         }
     }
 }
-
