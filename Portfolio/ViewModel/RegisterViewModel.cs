@@ -1,25 +1,23 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Portfolio.ViewModels
+namespace Portfolio.Models
 {
     public class RegisterViewModel
     {
-        [Required(ErrorMessage = "Username is required")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Username must be between 3 and 50 characters")]
+        [Required]
+        [StringLength(50, MinimumLength = 3)]
         public string Username { get; set; }
 
-        [Required(ErrorMessage = "Password is required")]
-        [StringLength(50, MinimumLength = 6, ErrorMessage = "Password must be at least 6 characters")]
-        [DataType(DataType.Password)]
+        [Required]
+        [StringLength(50, MinimumLength = 6)]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "Confirm Password is required")]
-        [DataType(DataType.Password)]
-        [Compare("Password", ErrorMessage = "Passwords do not match")]
+        [Required]
+        [Compare("Password", ErrorMessage = "Passwords do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [Required(ErrorMessage = "Role is required")]
-        [StringLength(20, ErrorMessage = "Role must not exceed 20 characters")]
-        public string Role { get; set; } // Example: "Client" or "Admin"
+        [Required]
+        [StringLength(20)]
+        public string Role { get; set; } // You can set a default value for Role, like "User" if required
     }
 }
